@@ -1,28 +1,50 @@
 package br.senai.sp.jandira.model;
 
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Tarefas {
 
-    public String titulo, descricao;
-    int dataDeInicio, dataDeVencimento;
+    public String titulo, descricao, dataDeInicio, dataDeVencimento, responsavel, resposta;
     Scanner teclado = new Scanner(System.in);
-    public void NovaTarefa(){
+    public Tarefas NovaTarefa(){
+        Tarefas tarefas = new Tarefas();
         System.out.println("--------------Tarefa-----------------");
         System.out.println("Qual o titulo da tarefa? ");
-        titulo = teclado.next();
+        tarefas.titulo = teclado.next();
         System.out.println("Descreva o intuíto da tarefa: ");
-        descricao = teclado.next();
+        tarefas.descricao = teclado.next();
         System.out.println("Data de inicio: ");
-        dataDeInicio = teclado.nextInt();
+        tarefas.dataDeInicio = teclado.nextLine();
         teclado.nextLine();
         System.out.println("Data de vencimento: ");
-        dataDeVencimento = teclado.nextInt();
-        teclado.nextLine();
+        tarefas.dataDeVencimento = teclado.nextLine();
+
+        return tarefas;
+    }
+
+    List <Tarefas> listTarefas = new ArrayList<>();
+
+    public void adicionarTarefa(Tarefas tarefas){
+        listTarefas.add(tarefas);
     }
 
     public void listarTarefas(){
+        for (Tarefas tarefas : listTarefas){
+            System.out.println(tarefas.titulo);
+            System.out.println(tarefas.descricao);
+            System.out.println(tarefas.dataDeInicio);
+            System.out.println(tarefas.dataDeVencimento);
+        }
+    }
+
+
+    public void alterarResponsavel(){
 
     }
 
-}
+
+
+    }
