@@ -21,6 +21,15 @@ public class Tarefas {
         teclado.nextLine();
         System.out.println("Data de vencimento: ");
         tarefas.dataDeVencimento = teclado.nextLine();
+        System.out.println(" A tarefa tem um responsavel pela conclusão? (S - N)");
+        tarefas.resposta = teclado.nextLine();
+
+        if (tarefas.resposta.equalsIgnoreCase("S")){
+            System.out.println("Digite o nome do responsavel:");
+            tarefas.responsavel = teclado.nextLine();
+        } else{
+            tarefas.resposta.equalsIgnoreCase("N");
+        }
 
         return tarefas;
     }
@@ -37,11 +46,18 @@ public class Tarefas {
             System.out.println(tarefas.descricao);
             System.out.println(tarefas.dataDeInicio);
             System.out.println(tarefas.dataDeVencimento);
+            System.out.println(tarefas.responsavel);
         }
     }
 
 
-    public void alterarResponsavel(){
+    public void alterarTarefa(){
+
+        System.out.println("O que deseja mudar? [1- ]");
+        resposta = teclado.nextLine();
+
+
+
 
     }
 
